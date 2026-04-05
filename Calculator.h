@@ -9,6 +9,7 @@ class Calculator
     char operation{'\0'};
 
     public:
+    void calculatorMenu();
     void getOperandsAndOperator();
     void performCalculation();
     void displayCalculationResults();

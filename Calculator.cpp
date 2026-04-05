@@ -11,7 +11,7 @@ void Calculator::calculatorMenu()
     std::cout << "4. Division(/) \n";
     std::cout << "5.Square Root(s) \n";
     std::cout << "6. Exponetion(p) \n";
-    std::cout << "Enter the choice of operation you wanna choose:" << ;
+    std::cout << "Enter the choice of operation you wanna choose:" ;
     std::cin >> operation;
 }
 
