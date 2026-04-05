@@ -10,7 +10,7 @@ void Calculator::calculatorMenu()
     std::cout << "3. Multiplication(x) \n";
     std::cout << "4. Division(/) \n";
     std::cout << "5.Square Root(s) \n";
-    std::cout << "6. Exponetion(p) \n";
+    std::cout << "6. Exponential(p) \n";
     std::cout << "Enter the choice of operation you wanna choose:" ;
     std::cin >> operation;
 }
@@ -28,6 +28,8 @@ void Calculator::getOperandsAndOperator()
         std::cin >> secondNumber;
     }
 
+
+
 }
 
 void Calculator::performCalculation() 
@@ -35,18 +37,22 @@ void Calculator::performCalculation()
     switch (operation) 
     {
         case '1':
+        operation = '+';
         result = firstNumber + secondNumber;
         break;
 
         case '2':
+        operation = '-';
         result = firstNumber - secondNumber;
         break;
 
         case '3':
+        operation = 'x';
         result = firstNumber * secondNumber;
         break;
 
         case '4' :
+        operation = '/';
         while(secondNumber == 0)
         {
             std::cout <<"Hey you cannot divide by zero! Please enter a valid Number!!" << '\n';
@@ -59,9 +65,10 @@ void Calculator::performCalculation()
 
         case '5':
 
-        if (secondNumber >= 0) 
+        if (firstNumber >= 0) 
         {
-            std::cout << sqrt(secondNumber);
+            result = std::sqrt(firstNumber) ;
+            
 
         }
         else 
@@ -72,6 +79,7 @@ void Calculator::performCalculation()
         break;
 
         case '6' :
+        operation = 'p';
         result = pow(firstNumber, secondNumber);
         break;
 
@@ -86,10 +94,10 @@ void Calculator::performCalculation()
 
 void Calculator::displayCalculationResults() 
 {
-    if (operation != 's') 
+    if (operation != '5') 
     {
         std::cout << "The result is: " << '\n';
-        std::cout << firstNumber << " " << operation << " " << secondNumber << " " << result << '\n';
+        std::cout << firstNumber << " " << operation << " " << secondNumber << " = " << result << '\n';
     }
 
     else 
